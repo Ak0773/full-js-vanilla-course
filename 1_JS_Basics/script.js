@@ -1,4 +1,4 @@
-laert('hello world')
+alert('hello world')
 
 alert('good job!')
 
