@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Object</title>
+	</head>
+	<body>
+		<script>
+			const pradact = {
+				name: 'iPhone 14',
+				price: 1000,
+			}
+
+			console.log(pradact)
+			console.log(pradact.name)
+			console.log(pradact.price)
+
+			prodoct.name = 'iPhone 15'
+			console.log(pradact.name)
+
+			prodoct.newProperty = true
+			console.log(pradact)
+
+			delete pradact.newProperty
+			console.log(pradact)
+
+			const product2 = {
+				name: 'coffe',
+				'delivery-time': '1 hour',
+				rating: {
+					star: 4.5,
+					count: 29,
+				},
+			}
+
+			console.log(product2)
+			console.log(product2.name)
+			console.log(product2['name'])
+			console.log(product2['delivery-time'])
+
+			const jsonString = JSON.stringify(product2)
+			console.log(JSON.parse(jsonString))
+
+			console.log('hello'.length)
+			console.log('hello'.toUpperCase())
+		</script>
+	</body>
+</html>
