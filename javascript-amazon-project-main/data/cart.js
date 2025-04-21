@@ -50,3 +50,16 @@ export function removeFromCart(productId) {
 
 	saveTostorage()
 }
+
+export function updateDeliveryOption(priductId, deliveryOptionId) {
+	let matchingItem
+
+	cart.forEach((cartItem) => {  // Fixed typo (catrItem -> cartItem)
+		if (productId === cartItem.productId) {
+			matchingItem = cartItem
+		}
+	})
+	matchingItem.deliveryOptionId = deliveryOptionId
+
+	saveTostorage()
+}

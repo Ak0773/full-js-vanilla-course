@@ -1,9 +1,10 @@
-import { cart, removeFromCart } from '../data/cart.js'
+import { cart, removeFromCart, updateDeliveryOption } from '../data/cart.js'
 import { products } from '../data/products.js'
 import { formatCurrency } from './utils/money.js'
 import { hello } from 'https://unpkg.com/supersimpledev@1.0.1/hello.js'
 import dayjs from 'https://unpkg.com/supersimpledev@8.5.0/dayjs/esm/index.js'
 import { deliveryOptions } from '../data/deliveryOptions.js'
+
 
 hello()
 const today = dayjs()
@@ -86,8 +87,8 @@ function deliveryOptionsHTML(matchingProduct, cartItem) {
 		const dataStiring = deliveryDate.format('dddd, MMMM D')
 		const priceString = deliveryOption.priceCents === 0 ? 'FREE' : `$${formatCurrency(deliveryOption.priceCents)}- `
 		const ischecked = deliveryOption.id === cartItem.deliveryOptionId
-
-		html += `<div class="delivery-option">
+		""
+		html += `<div class="delivery-option js-delivery-option" delivery-pruduct-id="${matchingProduct.id}" data-delivery-option-id="${deliveryOption.id}>
 				<input
 					type="radio"
 					${ischecked ? 'checked' : ''}
@@ -115,5 +116,14 @@ document.querySelectorAll('.js-delete-link').
 
 			container.remove()
 
+		})
+	})
+
+document.querySelectorAll('.js-delivery-option')
+	.forEach((element) => {
+		element.addEventListener('click', () => {
+			const { productId, deliveryOptionId } = element.dataset
+
+			updateDeliveryOption(productId, deliveryOptionId)
 		})
 	})
