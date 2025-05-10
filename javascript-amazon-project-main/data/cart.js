@@ -62,7 +62,7 @@ export function updateDeliveryOption(priductId, deliveryOptionId) {
 	let matchingItem
 
 	cart.forEach((cartItem) => {  // Fixed typo (catrItem -> cartItem)
-		if (productId === cartItem.productId) {
+		if (priductId === cartItem.productId) {
 			matchingItem = cartItem
 		}
 	})
