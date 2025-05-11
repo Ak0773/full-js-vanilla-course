@@ -70,6 +70,38 @@ const Tshirt = new Clothing({
   sizeChartLink: "images/clothing-size-chart.png"
 })
 
+/*
+const data = new Data()
+console.log(data)
+console.log(data.tolocaleTimeString())
+*/
+
+/*
+cosole.log(this)
+
+const object2 = {
+  a: 2,
+  b: this.a
+}
+*/
+
+/*
+function logThis (){
+console.log(this)
+}
+logThis()
+logThis.call('hello')
+*/
+/*
+
+cosnt object3 = {
+  method : () => {
+    console.log(this)
+  }
+}
+
+object3.method()
+*/
 
 export const product = [
   {
