@@ -18,15 +18,15 @@ products.forEach((product) => {
 
       <div class="product-rating-container">
         <img class="product-rating-stars"
-          src="images/ratings/rating-${product.rating.stars * 10}.png">
-        <div class="product-rating-count link-primary">
-          ${product.rating.count}
-        </div>
-      </div>
+          src="${product.getStarsUrl()}">
+    < div class="product-rating-count link-primary" >
+      ${product.rating.count}
+        </ >
+      </div >
 
       <div class="product-price">
-        $${formatCurrency(product.priceCents)}
-      </div>
+        ${product.getprice()}
+      </div >
 
       <div class="product-quantity-container">
         <select>
@@ -54,8 +54,8 @@ products.forEach((product) => {
       data-product-id="${product.id}">
         Add to Cart
       </button>
-    </div>
-  `
+    </div >
+    `
 })
 
 document.querySelector('.js-products-grid').innerHTML = productsHTML
