@@ -103,6 +103,32 @@ cosnt object3 = {
 object3.method()
 */
 
+let product = []
+
+function loadProducts(fun) {
+  const xhr = new XMLHttpRequest()
+
+  xhr.addEventListener('load', () => {
+    product = JSON.parse(xhr.respomse).map((productDetails) => {
+      if (productDetails.type === 'clothing') {
+        return new Clothing(productDetails)
+      }
+
+      return new Product(productDetails)
+    })
+
+    cosle.log('product is loaded')
+
+    fun()
+  })
+
+  xhr.open('GET', 'https://supersimplebackend.dev/products')
+  xhr.send()
+}
+
+loadProducts()
+
+/*
 export const product = [
   {
     id: "e43638ce-6aa0-4b85-b27f-e1d07eb678c6",
@@ -768,4 +794,5 @@ export const product = [
   }
 
   return new Product(productDetails)
-})
+})*/
+
