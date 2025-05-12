@@ -89,7 +89,7 @@ const object2 = {
 function logThis (){
 console.log(this)
 }
-logThis()
+logThis() 
 logThis.call('hello')
 */
 /*
